@@ -8,6 +8,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "os-browserify": "^0.3.0",
+    "papaparse": "^5.4.1",
+    "stream-browserify": "^3.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },

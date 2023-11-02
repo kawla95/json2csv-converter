@@ -1,10 +1,25 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <CsvConversion  />
+  </div>
 </template>
+
+<script>
+import CsvConversion from "./components/CsvConversion.vue";
+
+export default {
+  data() {
+    return {
+      jsonData: null,
+    };
+  },
+  components: {
+    CsvConversion,
+  },
+};
+</script>
+
+
 
 <style>
 #app {
