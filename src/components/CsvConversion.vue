@@ -26,9 +26,19 @@
   
         const reader = new FileReader();
         reader.onload = () => {
+          console.log('File loaded successfully'); 
           try {
             const jsonData = JSON.parse(reader.result);
+            console.log('Parsed JSON data:', jsonData);
+            if (jsonData.length === 0) {
+           console.log('JSON data is empty');
+           } else {
+            console.log ('Found data')
+           }
+           const header = Object.keys(jsonData[0]);
+           console.log('CSV header:', header);
             const csvContent = this.convertJsonToCsv(jsonData);
+            console.log('Generated CSV content:', csvContent); 
             const blob = new Blob([csvContent], { type: 'text/csv' });
             this.csvData = URL.createObjectURL(blob);
           } catch (error) {
@@ -62,6 +72,7 @@
       }
       return '""'; // If the value is null or undefined, use an empty string.
     });
+    console.log('CSV values for one row:', values);
 
     // Add the values for this object as a CSV line.
     csvLines.push(values.join(','));
